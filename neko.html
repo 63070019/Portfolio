@@ -1,0 +1,478 @@
+<html>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    <style>
+        body{
+            color: #c3cbe4;
+            background-color : #22252f;
+            margin: 0%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+        .child{
+            background: hsl(calc(var(--i)*40),100%,70%);
+            opacity: .9;
+            padding: 1em;
+            /* box-shadow: 0px 0px 10px #0008 inset; */
+            text-align: center;
+        }
+        .grid-parent{
+            display: grid;
+            grid-template-columns:64px 200px auto 100px;
+            grid-template-rows: 64px auto 300px;
+            /* gap:12px; */
+        }
+        .i-logo{
+            grid-column:1 / span 1;
+        }
+        .i-nav{
+            grid-column-end:span 3;
+        }
+        .i-side{
+            grid-column-start:1;
+            grid-column-end:3;
+        }
+        .i-footer{
+            grid-column:1/5;
+        }
+        .i-copy{
+            grid-column:1/5;
+        }
+        .topnav {
+        overflow: hidden;
+        background-color: #2d313e;
+        position:fixed;
+        width: 100%;
+        z-index: 5000;
+        }
+
+        .topnav a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 500;
+        }
+        .topnav input[type=text] {
+        width: 300px;
+        padding: 6px;
+        margin-top: 13px;
+        margin-right: 16px;
+        margin-left: 20px; 
+        border: none;
+        font-size: 17px;
+        
+        }
+        input{
+            float: left;
+            background-color: #2b2e3b;
+            color: #c3cbe4;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 230px auto;
+            /* gap: 10px; */
+            /* background-color: #2196F3; */
+            /* padding: 10px; */
+            padding-top: 40px;
+        }
+        .grid-container > div {
+            /* background-color: rgba(255, 255, 255, 0.8); */
+            /* text-align: center; */
+            padding: 20px 0;
+            padding-left: 20px;
+            font-size: 12px;
+        }
+        .grid-container-inside{
+            display: grid;
+            grid-template-columns: auto 400px;
+            /* gap: 10px; */
+            /* background-color: #2196F3; */
+            padding-right: 30px;
+            padding-left: 10px;
+        }
+        .grid-container-in {
+            display: grid;
+            /* grid-template-columns: 100px 100px 100px 100px 100px 100px; */
+            grid-template-columns: 170px auto auto auto auto auto;
+            gap: 20px;
+            margin-right: 2%;
+            /* background-color: #2196F3; */
+            /* padding: 10px; */
+            
+        }
+        .item1 {
+            border-radius: 1%;
+            color: #c3cbe4;
+            background-color: #2d313e;
+            margin-top: 20px;
+            grid-column: 1 / 1;
+            height: 670px;
+            
+            /* background-color: cornflowerblue; */
+            
+        }
+        .item2 {
+            padding: 0;
+            margin-left: 0%;
+            margin-top: 20px;
+            grid-column: 2 / 2;
+            /* background-color: aquamarine; */
+        }
+        .item3 {
+            padding: 0;
+            padding-top: 10px;
+            margin-left: 40px;
+            grid-column: 1 / 1;
+            /* padding-left: 40px; */
+            /* background-color: salmon; */
+        }
+        .item4 {
+            padding: 0;
+            margin-left: 0%;
+            grid-column: 2 / 2;
+            background-color: snow;
+        }
+        .item5 {
+            padding: 0;
+            margin-left: 0%;
+            grid-column: 5 / 5;
+            background-color: pink;
+        }
+        .item6 {
+            padding: 0;
+            margin-left: 0%;
+            grid-column: 1 / 6;
+            background-color: yellowgreen;
+        }
+        h3{
+            font-weight: 500;
+        }
+        .book1{
+            /* border: 1px solid red; border-radius: 2%; */
+            padding: 0;
+            /* margin-left: 0%; */
+            grid-column: 1 / 1;
+            /* padding: 10px; */
+            margin-right: auto;
+            /* height: 270px; */
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            font-size: 14.5px;
+        }
+        .book2{
+            /* background-color: aqua; */
+            /* border: 1px solid red; border-radius: 2%; */
+            padding: 0;
+            margin-left: 0%;
+            grid-column: 2 / 2;
+            margin-right: auto;
+            font-size: 14.5px;
+        }
+        .book3{
+            /* background-color: brown; */
+            /* border: 1px solid red; border-radius: 2%; */
+            padding: 0;
+            margin-left: 0%;
+            grid-column: 3 / 3;
+            margin-right: auto;
+            font-size: 14.5px;
+        }
+        .book4{
+            /* background-color: chartreuse; */
+            /* border: 1px solid red; border-radius: 2%; */
+            padding: 0;
+            margin-left: 0%;
+            grid-column: 4 / 4;
+            margin-right: auto;
+            font-size: 14.5px;
+        }
+        .book5{
+            /* background-color:darkorange ; */
+            /* border: 1px solid red; border-radius: 2%; */
+            padding: 0;
+            margin-left: 0%;
+            grid-column: 5 / 5;
+            margin-right: auto;
+            font-size: 14.5px;
+        }
+        .book6{
+            /* background-color: deepskyblue; */
+            /* border: 1px solid red; border-radius: 2%; */
+            padding: 0;
+            margin-left: 0%;
+            grid-column: 6 / 6;
+            margin-right: auto;
+            font-size: 14.5px;
+        }
+        .image{
+            width: 170px;
+            /* border: 2px solid blue; */
+            border-radius: 2%;
+        }
+        .perbook{
+            padding: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            /* font-size: ; */
+            background-color: #2d313e;
+            border-radius: 2%;
+        }
+        .sup{
+            font-size: 11px;
+            padding-top: 0%;
+            /* margin: 0%; */
+        }
+        .whitesmoke {
+           filter:  invert(100%) sepia(1%) saturate(3134%) hue-rotate(13deg) brightness(113%) contrast(92%);
+        }
+        .left_bar{
+            padding: 10px;
+            padding-top: 0;
+            font-size: 14px;
+            /* margin-left: 30px; 
+            margin-top: 12px; 
+            font-size: 15px; */
+        }
+    </style>
+    <body>
+        <div class="topnav">
+            <img style="float: left; margin-left: 20; margin-top: 20; ;" src="https://media.discordapp.net/attachments/381402365871521803/1010565160135561307/logo-sm.png" width="18" height="20">
+            <a style="color: snow; padding-left: 3px;">NEKOPOST.NET</a>
+            <div class="search_bar">
+                <input type="text" placeholder="Search">
+            </div>
+            
+            <img style="float: right; margin-right: 15; margin-top: 20;" src="https://cdn.discordapp.com/attachments/381402365871521803/1010580574290858054/line.png" width="25" height="27">
+            <img style="float: right; margin-right: 15; margin-top: 20;" src="https://cdn.discordapp.com/attachments/381402365871521803/1010580573309374564/facebook.png" width="25" height="27">
+            <img style="float: right; margin-right: 15; margin-top: 20;" src="https://media.discordapp.net/attachments/381402365871521803/1010580237106565130/discord.png?width=467&height=467" width="25" height="27">
+        </div>
+
+        <div class="grid-container">
+            <div class="item1" style="">
+                <p style="opacity: 50%;">MAIN MENU</p>
+                <div class="left_bar">
+                    <img class="whitesmoke" src="https://www.svgrepo.com/show/95944/home.svg" alt=""" width="20px" style="float: left; opacity: 40%;margin-right: 10;">
+                    <p style="opacity: 70%; margin: 25px;">Home</p>
+                    <img class="whitesmoke" src="https://www.svgrepo.com/show/95944/home.svg" alt=""" width="20px" style="float: left; opacity: 40%; margin-right: 10;">
+                    <p style="opacity: 70%; margin: 25px;">Random</p>
+                    
+                </div>
+                <p style="opacity: 50%;">PROJECT</p>
+                <div class="left_bar">
+                    <img class="whitesmoke" src="https://www.svgrepo.com/show/332537/setting.svg" alt=""" width="20px" style="float: left;margin-top: 00px; opacity: 40%; margin-right: 10;">
+                    <p style="opacity: 70%; margin: 25px;">Explore</p>
+                    <img class="whitesmoke " src="https://www.svgrepo.com/show/332537/setting.svg" alt=""" width="20px" style="float: left;margin-top: 0px; opacity: 40%; margin-right: 10;">
+                    <p style="opacity: 70%; margin: 25px;">Manga</p>
+                    <img class="whitesmoke" src="https://www.svgrepo.com/show/332537/setting.svg" alt=""" width="20px" style="float: left;margin-top: 0px; opacity: 40%; margin-right: 10;">
+                    <p style="opacity: 70%; margin: 25px;">Novel</p>
+                    <img class="whitesmoke" src="https://www.svgrepo.com/show/332537/setting.svg" alt=""" width="20px" style="float: left;margin-top: 0px; opacity: 40%; margin-right: 10;">
+                    <p style="opacity: 70%; margin: 25px;">Original Comic</p>
+                    <img class="whitesmoke" src="https://www.svgrepo.com/show/332537/setting.svg" alt=""" width="20px" style="float: left;margin-top: 0px; opacity: 40%; margin-right: 10;">
+                    <p style="opacity: 70%; margin: 25px;">Original Novel</p>
+                </div>
+                <p style="opacity: 50%;">SITE RELATED</p>
+                <div class="left_bar">
+                    <img class="whitesmoke" src="https://www.svgrepo.com/show/332537/setting.svg" alt=""" width="20px" style="float: left;margin-top: 00px; opacity: 40%; margin-right: 10;">
+                    <p style="opacity: 70%; margin: 25px;">About Us</p>
+                    <img class="whitesmoke " src="https://www.svgrepo.com/show/332537/setting.svg" alt=""" width="20px" style="float: left;margin-top: 0px; opacity: 40%; margin-right: 10;">
+                    <p style="opacity: 70%; margin: 25px;">Data Privacy</p>
+                </div>
+                <img class="whitesmoke" src="https://www.svgrepo.com/show/360343/discord.svg" alt="" width="25px" style="opacity: 70%;margin: 10px;">
+                <img class="whitesmoke" src="https://www.svgrepo.com/show/368254/line.svg" alt="" width="25px" style="opacity: 70%;margin: 10px;">
+                <img class="whitesmoke" src="https://www.svgrepo.com/show/332056/facebook.svg" alt="" width="25px" style="opacity: 70%;margin: 10px;">
+                <img class="whitesmoke" src="https://www.svgrepo.com/show/94218/chat.svg" alt="" width="25px" style="opacity: 70%;margin: 10px;">
+            </div>
+            <div class="item2">
+                <hr style="border: 1px solid slategray; margin-top: 5%; margin-right: 4%; margin-left: 3%;">
+                <div class="grid-container-inside">
+                    <div class="item3">
+                        <h3 style="color: white;">Latest Comic</h3>
+                        <p style="opacity: 70%;">Original Comic</p>
+                        <div class="grid-container-in" >
+                            <div class="book1">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book2">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book3">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book4">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book5">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book6">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book1">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book2">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book3">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book4">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book5">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="book6">
+                                <div>
+                                    <img src="photo/11708_cover.jpg" alt="" width="170px" style="border-radius: 2%;">
+                                    <div class="perbook">
+                                        <p style="color: white;">ยัยซัคคิวบัสสุดบ๊องคานัน...</p>
+                                        <div class="sup">
+                                            <p>Ch.4-การไปโรงเรียนสุดร้อนแร..</p>
+                                            <p style="color: white;">MOOD IN MY TIME   7 days a...</p>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item4">
+                        <p>Top Provider</p>
+                        <p>Most recognized editor</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- <img style="margin: 10%;" src="https://cdn.discordapp.com/attachments/381402365871521803/1010573181335113799/272669569_102118782391272_7594130178937334800_n.jpg" alt=""> -->
+
+    </body>
+</html>
