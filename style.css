@@ -9,6 +9,18 @@ body{
     
     
 }
+#changeLanguageButtonThai{
+    position: fixed;
+    bottom: 1vw;
+    right: 4vw;
+    z-index: 1200;
+}
+#changeLanguageButtonEng{
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    z-index: 1200;
+}
 .line{
     position: absolute;
     width: 5em;
@@ -38,12 +50,12 @@ body{
 .hello{
     opacity: 1;
     text-align: center;
-    font-size: 15vw;
-    z-index: 10;
+    font-size: 12vw;
+    height: 700px;
+    z-index: 15;
     /* color: #1F323B; */
-    /* animation: cursor 1s step-start infinite, 
-    text 5s steps(18) alternate infinite;
-     */
+    /* background-color: #c3c3c3;     */
+
 }
 #contact{
     margin-top: 35vw;
@@ -55,7 +67,11 @@ body{
     margin-top: 10%;
 }
 
-
+.des{
+    font-size: 1.3vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
 
 a{
     text-decoration: none;
@@ -243,6 +259,10 @@ a{
     opacity: 0;
     cursor: pointer;
 }
-
+.languageBtn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 
 /* video */

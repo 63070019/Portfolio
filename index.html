@@ -17,10 +17,11 @@
     <div id="sidebar">
 		<ul class="menu">
             <a href="https://kip.kmitl.ac.th/projects/clmd4mze100cvqntqzrwozkrx" target="_blank" id="side"><li>Floorplan and Room Usage Information Media (in progress)</li></a>
-            <a href="https://mebmarket-46c40.web.app/" target="_blank" id="side"><li> MockUP Meb market</li></a>
+            <a href="https://drive.google.com/file/d/1r4yL9smiUEFUT2T0YIt3LyAmOdhrojK9/view?usp=sharing" target="_blank" id="side"><li> Intern at Bangkok Web Solution Co.,Ltd.</li></a>
 			<!-- <a href="neko.html" target="_blank" id="side"><li>MockUP Nekopost</li></a> -->
 			<a href="https://63070019.github.io/Fast-8/" target="_blank" id="side"><li>Fast-8</li></a>
 			<a href="https://mastercall-2029d.web.app/" target="_blank" id="side"><li>Master Call</li></a>
+            <a href="https://mebmarket-46c40.web.app/" target="_blank" id="side"><li> MockUP Meb market</li></a>
 			<a href="https://github.com/63070019/Java_storeManage" target="_blank" id="side"><li>STORE MANAGEMENT SYSTEM</li></a>
             <a href="https://drive.google.com/drive/folders/1aX5MuZyGeOIhbXBV0GDpz66uHMjymnfQ?usp=sharing" target="_blank" id="side"><li>CARD DETECTION AND COUNT</li></a>
             <a href="https://drive.google.com/drive/folders/1IKQgh9WrUAeZiXlN8JmQDWtMKibG72Gk?usp=sharing" target="_blank" id="side"><li>Vengeful Impact of the Dawn</li></a>
@@ -34,15 +35,20 @@
         <span></span>
         
     </div>
-
+    <button id="changeLanguageButtonThai" class="languageBtn">
+        <img src="photo/thaiIcon.png" alt="Change Language" width="40vw">
+    </button>
+    <button id="changeLanguageButtonEng" class="languageBtn">
+        <img src="photo/engIcon.png" alt="Change Language" width="40vw">
+    </button>
     <div class="top">
-        <h1 class="hello">Hello I'm Jiraphat Wunpuan</h1> 
+        <h1 class="hello"  id="hello1"><span data-translate="hello1">Hello</span><br><span data-translate="hello2"> I'm Jiraphat Wunpuan</span></h1>
     </div>
-    <h1>I'm 3rd years student from King Mongkut's Institute of Technology Ladkrabang</h1>
-    <h1>Bachelor of Science Program in Information Technology (Multimedia and Game Development)</h1>
-    <h1>who is interested in web developer and ui / ux designer</h1>
+    <h1 id="i" data-translate="i">I'm 3rd years student from King Mongkut's Institute of Technology Ladkrabang</h1>
+    <h1 id="b" data-translate="b">Bachelor of Science Program in Information Technology (Multimedia and Game Development)</h1>
+    <h1 id="h" data-translate="h">who is interested in web developer and ux / ui designer</h1>
     <div class="space">
-        <h1>this is my project</h1>
+        <h1 id="t" data-translate="t">this is my project and my experience, you can click image to view information</h1>
     </div>
     
 
@@ -50,33 +56,42 @@
         <h1><a href="https://kip.kmitl.ac.th/projects/clmd4mze100cvqntqzrwozkrx" target="_blank"> Project : Floorplan and Room Usage Information Media (In Process)</a></h1>
         <div class="container">
             <div class="content">
-            <a href="https://kip.kmitl.ac.th/projects/clmd4mze100cvqntqzrwozkrx" target="_blank">
-                <div class="content-overlay"></div>
-                <img class="content-image" src="photo/kmitl.png" alt="">
-                <div class="content-details fadeIn-top">
-                <h3>Floorplan and Room Usage Information Media</h3>
-                </div>
-            </a>
+                <a href="https://kip.kmitl.ac.th/projects/clmd4mze100cvqntqzrwozkrx" target="_blank">
+                    <div class="content-overlay"></div>
+                    <img class="content-image" src="photo/kmitl.png" alt="">
+                    <div class="content-details fadeIn-top">
+                    <h3>Floorplan and Room Usage Information Media</h3>
+                    </div>
+                </a>
             </div>
+        </div>
+        <div class="des">
+            <p data-translate="4" id="4">This is my year 4 final project using React, nodeJS and PostgreSQL. This project is about displaying and showing floor plans and information or activities in the KMITL building and letting students book rooms. In the admin zone
+                , it can display room usage to analyze data.
+            </p>
         </div>
     </div>
 
     <div class="space" id="fade">
-        <h1><a href="https://mebmarket-46c40.web.app/" target="_blank"> Project MockUP : Meb market</a></h1>
+        <h1><a href="https://drive.google.com/file/d/1r4yL9smiUEFUT2T0YIt3LyAmOdhrojK9/view?usp=sharing" target="_blank"> Intern at Bangkok Web Solution Co.,Ltd. as a Back-End developer</a></h1>
         <div class="container">
             <div class="content">
-            <a href="https://mebmarket-46c40.web.app/" target="_blank">
+            <a href="https://drive.google.com/file/d/1r4yL9smiUEFUT2T0YIt3LyAmOdhrojK9/view?usp=sharing" target="_blank">
                 <div class="content-overlay"></div>
-                <img class="content-image" src="photo/meb.png" alt="">
+                <img class="content-image" src="photo/intern.png" alt="">
                 <div class="content-details fadeIn-top">
-                <h3>MockUP Meb market</h3>
-                <!-- <p>This is a short description</p> -->
+                <h3>intern at Bangkok Web Solution Co.,Ltd.</h3>
                 </div>
             </a>
             </div>
         </div>
+        <div class="des">
+            <p data-translate="bangkok">I had the opportunity to intern at Bangkok Web Solution Co.,Ltd. as a back end developer.
+            </p>
+        </div>
     </div>
 
+    
     <!-- <div class="space">
         <h1><a href="neko.html" target="_blank"> Project MockUP : Nekopost</a></h1>
         <div class="container">
@@ -100,14 +115,18 @@
                 <div class="content-overlay"></div>
                 <img class="content-image" src="photo/fast.png" alt="">
                 <div class="content-details fadeIn-top">
-                <h3>Fast-8</h3>
+                    <h3>Fast-8</h3>
                 <!-- <p>This is a short description</p> -->
                 </div>
             </a>
             </div>
         </div>
+        <div class="des">
+            <p data-translate="fast">this is education web site, by telling the story of the history of bus number 8.
+            </p>
+        </div>
     </div>
-
+    
     <div class="space">
         <h1><a href="https://mastercall-2029d.web.app/" target="_blank"> Project Master Call </a></h1>
         <div class="container">
@@ -116,11 +135,34 @@
                 <div class="content-overlay"></div>
                 <img class="content-image" src="photo/master.png" alt="">
                 <div class="content-details fadeIn-top">
-                <h3>Master Call (in progress)</h3>
+                    <h3>Master Call (in progress)</h3>
+                    <!-- <p>This is a short description</p> -->
+                </div>
+            </a>
+            </div>
+        </div>
+        <div class="des">
+            <p data-translate="master">This is a game multiplayer web site, which is an X/O game that has skills to make it more fun and challenging for the player.
+            </p>
+        </div>
+    </div>
+    <div class="space" id="fade">
+        <h1><a href="https://mebmarket-46c40.web.app/" target="_blank"> Project MockUP : Meb market</a></h1>
+        <div class="container">
+            <div class="content">
+            <a href="https://mebmarket-46c40.web.app/" target="_blank">
+                <div class="content-overlay"></div>
+                <img class="content-image" src="photo/meb.png" alt="">
+                <div class="content-details fadeIn-top">
+                <h3>MockUP Meb market</h3>
                 <!-- <p>This is a short description</p> -->
                 </div>
             </a>
             </div>
+        </div>
+        <div class="des">
+            <p data-translate="meb">This is a mockup project, a mockup meb market website. 
+            </p>
         </div>
     </div>
 
@@ -138,6 +180,10 @@
             </a>
             </div>
         </div>
+        <div class="des">
+            <p data-translate="java">This is department store management system using Java language, which lets users add products and manage them.
+            </p>
+        </div>
     </div>
     
     <div class="space">
@@ -153,6 +199,10 @@
                 </div>
             </a>
             </div>
+        </div>
+        <div class="des">
+            <p data-translate="yolo">This is a card detection and count project using YOLO v.5, which can detect and count cards.
+            </p>
         </div>
     </div>
 
@@ -170,6 +220,10 @@
             </a>
             </div>
         </div>
+        <div class="des">
+            <p data-translate="game">This is my game project using Unreal Engine 4.
+            </p>
+        </div>
     </div>
 
     <div class="space">
@@ -186,6 +240,10 @@
             </a>
             </div>
         </div>
+        <div class="des">
+            <p data-translate="cl">This is department store management system using the c language, which lets users add products and manage them.
+            </p>
+        </div>
     </div>
     <div class="space">
         <h1><a href="https://www.youtube.com/watch?v=ZI353R1lp_E" target="_blank"> MAYA old man and the sea</a></h1>
@@ -201,6 +259,10 @@
             </a>
             </div>
         </div>
+        <div class="des">
+            <p data-translate="old">This is a 3D animation project using Maya.
+            </p>
+        </div>
     </div>
 
     <div class="space" id="maya">
@@ -214,10 +276,10 @@
 
 
     <div class="space" id="contact">
-        <h1>contact me</h1>
-        <h2>tel : 093 091 0002</h2>
-        <h2>Email : jiraphat.deaw@gmail.com / 63070019@kmitl.ac.th</h2>
-        <h2><a href="https://www.facebook.com/jiraphat.wunpuan" style="color: black;" target="_blank"> Facebook : Jiraphat Deaw</a></h2>
+        <h1 data-translate="c">contact me</h1>
+        <h2 data-translate="tel">tel : 093 091 0002</h2>
+        <h2 data-translate="email">Email : jiraphat.deaw@gmail.com / 63070019@kmitl.ac.th</h2>
+        <h2 ><a href="https://www.facebook.com/jiraphat.wunpuan" style="color: black;" target="_blank" data-translate="face"> Facebook : Jiraphat Deaw</a></h2>
     </div>
    
 
